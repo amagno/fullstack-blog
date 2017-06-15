@@ -1,0 +1,36 @@
+{
+  "name": "graphql-server",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-errors": "^1.4.0",
+    "apollo-resolvers": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.6",
+    "graphql": "^0.10.1",
+    "graphql-tools": "^1.0.0",
+    "jsonwebtoken": "^7.4.1",
+    "loadash": "^0.0.1",
+    "mongoose": "^4.10.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "6",
+    "babel-jest": "^20.0.3",
+    "babel-plugin-inline-import": "^2.0.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "casual": "^1.5.12",
+    "jest-cli": "^20.0.4",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2"
+  },
+  "scripts": {
+    "dev:test": "jest src --watch",
+    "dev:server": "nodemon src/server/ --exec babel-node --presets es2015,stage-2",
+    "dev": "npm-run-all --parallel dev:*"
+  }
+}

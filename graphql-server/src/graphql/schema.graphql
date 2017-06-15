@@ -1,0 +1,52 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    users: [User]
+    postsWithPages(page: Int = 1, limit: Int = 10): PostsWithMaxPages
+    user(id: ID!): User
+}
+type Mutation {
+    addPost(input: PostInput): Post
+    registerUser(input: RegisterUserInput): User,
+    login(input: LoginInput): Token
+}
+input LoginInput {
+    email: String!
+    password: String!
+}
+input RegisterUserInput {
+    name: String!
+    email: String!
+    password: String!
+}
+input PostInput {
+    title: String!
+    body: String
+}
+type PostsWithMaxPages {
+    total: Int
+    page: Int
+    maxPages: Int
+    posts: [Post]
+}
+type User {
+    id: ID!
+    name: String
+    email: String
+    password: String
+    isAdmin: Boolean
+}
+type Post {
+    id: ID!
+    title: String
+    body: String
+    createdAt: String
+    author: User
+}
+type Token {
+    token: String
+    expires: String
+}

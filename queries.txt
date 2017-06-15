@@ -1,0 +1,40 @@
+{
+  posts{
+    id
+    title
+    author {
+      id
+      name
+    }
+  }
+}
+mutation {
+  addPost(input: {
+    title:"hello"
+    body: "hello world"
+  }) {
+    id
+    title
+    body
+    date
+  }
+}
+mutation {
+  login(input: {
+    email: "teste11@test.com"
+    password: "123456"
+  }) {
+    token
+    expires
+  }
+}
+mutation {
+  registerUser(input: {
+    name: "Hello Testing"
+    email: "hello@test.com"
+    password: "123"
+  }) {
+    id
+  }
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MzYxNzQyMGU3N2JmMTJiMDkxMjBlMCIsImlhdCI6MTQ5Njc3NTg2OCwiZXhwIjoxNDk2Nzc5NDY4fQ.O2PTUYR29oY5_R7jRbJzFuM0Gdh3pZJ6jx64U4Jjq50
